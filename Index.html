@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>HOTEL NEW GRAND — Premier Luxury & Pilgrimage Stay in Deoghar</title>
+  <meta name="description" content="Experience hospitality at Hotel New Grand, located opposite Baidyanathdham Railway Station Road, Deoghar. Close to Baba Baidyanath Jyotirlinga Mandir, Naulakha Temple, and Trikut Pahar.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. BRAND THEME VARIABLES & RESET
+       ========================================================================== */
+    :root {
+      --bg-color: #F8FAFC;
+      --panel-bg: #FFFFFF;
+      --panel-hover: #F1F5F9;
+      --text-primary: #0F172A;
+      --text-muted: #475569;
+      --accent-purple: #5C3866;
+      --accent-purple-soft: rgba(92, 56, 102, 0.12);
+      --accent-gold: #C59B27;
+      --accent-blue: #0284C7;
+      --accent-blue-hover: #0369A1;
+      --border-color: #E2E8F0;
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --cubic-ease: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    body {
+      overflow-x: hidden;
+      line-height: 1.6;
+      background-color: var(--bg-color);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-color);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CBD5E1;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--accent-purple);
+    }
+
+    /* ==========================================================================
+       2. HEADER (SMART HIDE ON DOWN SCROLL, REVEAL ON UP SCROLL + BRAND LOGO)
+       ========================================================================== */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 16px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border-bottom: 1px solid var(--border-color);
+      transition: transform 0.4s var(--cubic-ease), background 0.3s ease, padding 0.3s ease;
+    }
+
+    /* Class added via JS when scrolling down */
+    .top-nav.nav-hidden {
+      transform: translateY(-100%);
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    /* Custom SVG matching the purple swirl logo from the screenshot */
+    .brand-logo-svg {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-contact-header {
+      background: var(--accent-purple);
+      color: #FFFFFF;
+      padding: 10px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(92, 56, 102, 0.3);
+    }
+
+    .btn-contact-header:hover {
+      background: #4A2B53;
+      transform: translateY(-2px);
+    }
+
+    .hamburger-btn {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .hamburger-btn:hover {
+      border-color: var(--accent-purple);
+      background: var(--panel-hover);
+    }
+
+    /* Drawer */
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(8px);
+      z-index: 1050;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s var(--cubic-ease);
+    }
+
+    .drawer-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .nav-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 380px;
+      max-width: 85vw;
+      height: 100vh;
+      background-color: #FFFFFF;
+      z-index: 1100;
+      transform: translateX(-100%);
+      transition: transform 0.5s var(--cubic-ease);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 50px 40px;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .nav-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .drawer-link {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .drawer-link:hover {
+      color: var(--accent-purple);
+    }
+
+    /* ==========================================================================
+       3. HERO SECTION WITH BANNER BACKGROUND
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 20px 80px 20px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .hero-banner-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.55) contrast(1.05);
+      transform: scale(1.05);
+      animation: heroZoom 20s infinite alternate ease-in-out;
+    }
+
+    @keyframes heroZoom {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15,23,42,0.4) 0%, rgba(15,23,42,0.7) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 1000px;
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #F8FAFC;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      line-height: 1.1;
+      font-weight: 600;
+      margin-bottom: 24px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+      color: #E2E8F0;
+      max-width: 720px;
+      margin: 0 auto 40px auto;
+      font-weight: 300;
+    }
+
+    .hero-booking-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 24px 32px;
+      box-shadow: var(--shadow-xl);
+      max-width: 900px;
+      margin: 0 auto;
+      color: var(--text-primary);
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .booking-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: left;
+    }
+
+    .booking-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .booking-field {
+      padding: 12px 16px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      font-family: var(--font-sans);
+      color: var(--text-primary);
+      background: #F8FAFC;
+      transition: border-color 0.3s ease;
+    }
+
+    .booking-field:focus {
+      border-color: var(--accent-purple);
+    }
+
+    .btn-submit-booking {
+      background: var(--accent-purple);
+      color: #FFFFFF;
+      border: none;
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(92, 56, 102, 0.3);
+      white-space: nowrap;
+    }
+
+    .btn-submit-booking:hover {
+      background: #4A2B53;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       4. INFINITE CAROUSEL WITH MANUAL MANUAL LEFT/RIGHT SCROLL CONTROLS
+       ========================================================================== */
+    .places-section {
+      padding: 100px 0;
+      background: #FFFFFF;
+      position: relative;
+    }
+
+    .section-header-center {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-tag {
+      color: var(--accent-purple);
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    /* Carousel Outer Container with Left/Right Navigation Overlay */
+    .carousel-relative-wrapper {
+      position: relative;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Carousel Nav Buttons */
+    .carousel-control-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 25;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.3s var(--cubic-ease);
+    }
+
+    .carousel-control-btn:hover {
+      background: var(--accent-purple);
+      color: #FFFFFF;
+      border-color: var(--accent-purple);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-btn-left {
+      left: 30px;
+    }
+
+    .carousel-btn-right {
+      right: 30px;
+    }
+
+    /* Infinite Track Viewport */
+    .infinite-scroll-viewport {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 20px 0 40px 0;
+      mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    }
+
+    .infinite-scroll-track {
+      display: flex;
+      gap: 30px;
+      width: max-content;
+      will-change: transform;
+    }
+
+    .place-card {
+      width: 380px;
+      height: 520px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.4s var(--cubic-ease);
+      border: 1px solid var(--border-color);
+      text-decoration: none;
+      flex-shrink: 0;
+      background: #0F172A;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .place-card-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--cubic-ease);
+    }
+
+    .place-card:hover .place-card-img {
+      transform: scale(1.08);
+    }
+
+    .place-card-overlay {
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(15,23,42,0.75) 30%, rgba(15,23,42,0.98) 100%);
+      padding: 30px 24px 24px 24px;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .place-rating {
+      font-size: 0.8rem;
+      color: #FACC15;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .place-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      line-height: 1.25;
+      color: #FFFFFF;
+    }
+
+    .place-desc {
+      font-size: 0.88rem;
+      color: #CBD5E1;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .place-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .place-card:hover .place-badge {
+      background: var(--accent-purple);
+      border-color: var(--accent-purple);
+    }
+
+    /* ==========================================================================
+       5. MORE HOTEL OPTIONS & SERVICES (MORE OPTIONS ADDED)
+       ========================================================================== */
+    .services-section {
+      padding: 100px 60px;
+      background: #F8FAFC;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: #FFFFFF;
+      padding: 32px 24px;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-purple);
+    }
+
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-purple-soft);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: var(--accent-purple);
+    }
+
+    .service-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       6. ROOMS & SUITES SECTION
+       ========================================================================== */
+    .rooms-section {
+      padding: 120px 60px;
+      background: #FFFFFF;
+    }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .room-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.4s var(--cubic-ease);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .room-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--accent-purple);
+    }
+
+    .room-img-wrap {
+      height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .room-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--cubic-ease);
+    }
+
+    .room-card:hover .room-img {
+      transform: scale(1.06);
+    }
+
+    .room-details {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .room-price-tag {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--accent-purple);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .room-price-tag span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-weight: 400;
+    }
+
+    .room-title-text {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .room-amenities {
+      list-style: none;
+      margin-bottom: 28px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .room-amenities li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .room-amenities li::before {
+      content: '✓';
+      color: var(--accent-purple);
+      font-weight: bold;
+    }
+
+    .btn-book-room {
+      margin-top: auto;
+      background: #FFFFFF;
+      color: var(--accent-purple);
+      border: 1px solid var(--accent-purple);
+      padding: 14px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    .btn-book-room:hover {
+      background: var(--accent-purple);
+      color: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       7. CONTACT CALLOUT SECTION
+       ========================================================================== */
+    .contact-cta-section {
+      padding: 100px 60px;
+      background: #F8FAFC;
+    }
+
+    .contact-card-box {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      border-radius: 24px;
+      padding: 70px 60px;
+      color: #FFFFFF;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      align-items: center;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .contact-cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .contact-cta-desc {
+      color: #94A3B8;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .contact-buttons-flex {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-phone-call {
+      background: var(--accent-gold);
+      color: #0F172A;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-phone-call:hover {
+      background: #D9B56F;
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: #FFFFFF;
+      padding: 16px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background: #20BA5A;
+      transform: translateY(-2px);
+    }
+
+    /* ==========================================================================
+       8. MULTI-DIRECTIONAL ANIMATIONS ENGINE
+       ========================================================================== */
+    .anim-el {
+      opacity: 0;
+      transition: opacity 0.8s var(--cubic-ease), transform 0.8s var(--cubic-ease);
+      will-change: opacity, transform;
+    }
+
+    .anim-from-left {
+      transform: translateX(-60px);
+    }
+
+    .anim-from-right {
+      transform: translateX(60px);
+    }
+
+    .anim-from-bottom {
+      transform: translateY(50px);
+    }
+
+    .anim-zoom-in {
+      transform: scale(0.88);
+    }
+
+    .anim-el.anim-active {
+      opacity: 1;
+      transform: translateX(0) translateY(0) scale(1);
+    }
+
+    /* ==========================================================================
+       9. BRAND FOOTER (MODIFIED WITH BUTTONS INSTEAD OF SIMPLE TEXT LINKS)
+       ========================================================================== */
+    footer {
+      background: #0F172A;
+      color: #94A3B8;
+      padding: 80px 60px 40px 60px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .footer-grid {
+      max-width: 1400px;
+      margin: 0 auto 60px auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 50px;
+    }
+
+    .footer-brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+
+    .footer-col-head {
+      color: #FFFFFF;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+
+    /* BUTTONS INSTEAD OF SIMPLE TEXT LINKS */
+    .footer-btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background: #1E293B;
+      color: #F8FAFC;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .footer-action-btn:hover {
+      background: var(--accent-purple);
+      border-color: var(--accent-purple);
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(92, 56, 102, 0.3);
+    }
+
+    .footer-action-btn.gold-btn:hover {
+      background: var(--accent-gold);
+      border-color: var(--accent-gold);
+      color: #0F172A;
+      box-shadow: 0 4px 12px rgba(197, 155, 39, 0.3);
+    }
+
+    .btn-arrow {
+      font-size: 0.9rem;
+      opacity: 0.7;
+      transition: transform 0.3s ease;
+    }
+
+    .footer-action-btn:hover .btn-arrow {
+      opacity: 1;
+      transform: translateX(4px);
+    }
+
+    .footer-bottom-bar {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid #334155;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    /* ==========================================================================
+       10. RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .top-nav { padding: 16px 24px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-booking-card { grid-template-columns: 1fr; }
+      .rooms-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-card-box { grid-template-columns: 1fr; padding: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .place-card { width: 320px; height: 460px; }
+    }
+
+    @media (max-width: 768px) {
+      .top-nav { padding: 14px 16px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .hero-section { padding: 120px 16px 60px 16px; }
+      .rooms-section, .contact-cta-section, .services-section { padding: 60px 20px; }
+      .rooms-grid { grid-template-columns: 1fr; }
+      .place-card { width: 280px; height: 440px; }
+      .carousel-btn-left { left: 10px; }
+      .carousel-btn-right { right: 10px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom-bar { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SMART HIDE/SHOW HEADER WITH BACKGROUND & BRAND LOGO
+       ========================================================================== -->
+  <header class="top-nav" id="top-nav">
+    <a href="#hero" class="brand-logo">
+      <!-- BRAND LOGO MATCHING SCREENSHOT PURPLE SWIRL ICON -->
+      <svg class="brand-logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 50 10 A 40 40 0 1 0 90 50 A 40 40 0 0 0 75 25" stroke="#5C3866" stroke-width="10" stroke-linecap="round"/>
+        <path d="M 46 22 A 28 28 0 1 0 74 50 A 28 28 0 0 0 64 32" stroke="#7A4B88" stroke-width="8" stroke-linecap="round"/>
+        <path d="M 42 34 A 16 16 0 1 0 58 50" stroke="#A06BAC" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">Hotel New Grand</span>
+    </a>
+
+    <div class="nav-actions">
+      <a href="tel:6207223933" class="btn-contact-header">Call Desk</a>
+      <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Menu">
+        <span>Menu</span>
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="none">
+          <path d="M0 1H18M0 6H18M0 11H18" stroke="#0F172A" stroke-width="2"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- NAVIGATION DRAWER -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <nav class="nav-drawer" id="nav-drawer">
+    <div>
+      <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 30px; color: var(--accent-purple);">Hotel New Grand</h3>
+      <ul class="drawer-links">
+        <li><a href="#hero" class="drawer-link">Home</a></li>
+        <li><a href="#places" class="drawer-link">Famous Attractions</a></li>
+        <li><a href="#services" class="drawer-link">Guest Amenities</a></li>
+        <li><a href="#rooms" class="drawer-link">Rooms & Suites</a></li>
+        <li><a href="#contact" class="drawer-link">Direct Booking</a></li>
+      </ul>
+    </div>
+    <div>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Opp. Baidyanathdham Railway Station Road, Deoghar, Jharkhand</p>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION WITH BANNER BACKGROUND
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=80" alt="Hotel New Grand Luxury Banner" class="hero-banner-bg">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <span class="hero-badge anim-el anim-from-left">Deoghar, Jharkhand</span>
+        <h1 class="hero-title anim-el anim-from-right">Premier Comfort Near Baba Baidyanath Jyotirlinga</h1>
+        <p class="hero-subtitle anim-el anim-from-bottom">Convenient, elegant, and peaceful hospitality situated opposite Baidyanathdham Railway Station Road.</p>
+
+        <!-- FLOATING BOOKING CARD -->
+        <div class="hero-booking-card anim-el anim-zoom-in">
+          <div class="booking-input-group">
+            <label class="booking-label" for="checkin">Check In</label>
+            <input type="date" id="checkin" class="booking-field">
+          </div>
+          <div class="booking-input-group">
+            <label class="booking-label" for="checkout">Check Out</label>
+            <input type="date" id="checkout" class="booking-field">
+          </div>
+          <button class="btn-submit-booking" onclick="submitBooking()">Check Availability</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INFINITE HORIZONTAL SCROLLING WITH AUTO-SCROLL + CUSTOM MANUAL BUTTONS
+         ========================================================================== -->
+    <section class="places-section" id="places">
+      <div class="section-header-center anim-el anim-from-bottom">
+        <span class="section-tag">Explore Deoghar</span>
+        <h2 class="section-title">Famous Places & Spiritual Destinations</h2>
+        <p style="color: var(--text-muted);">Smooth infinite auto-scrolling with interactive left and right control buttons. Hover to pause!</p>
+      </div>
+
+      <div class="carousel-relative-wrapper">
+        <!-- CUSTOM SCROLL BUTTONS AT LEFT AND RIGHT -->
+        <button class="carousel-control-btn carousel-btn-left" id="btn-scroll-left" aria-label="Scroll Left">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="carousel-control-btn carousel-btn-right" id="btn-scroll-right" aria-label="Scroll Right">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+
+        <div class="infinite-scroll-viewport" id="carousel-viewport">
+          <div class="infinite-scroll-track" id="carousel-track">
+            
+            <!-- ATTRACTION 1: BABA BAIDYANATH JYOTIRLINGA MANDIR -->
+            <a href="https://www.google.com/maps/search/?api=1&query=Shree+Baba+Baidyanath+Jyotirlinga+Mandir+Deoghar" target="_blank" rel="noopener" class="place-card">
+              <img src="https://images.unsplash.com/photo-1609946782701-7fa34526d1be?auto=format&fit=crop&w=1000&q=80" alt="Shree Baba Baidyanath Jyotirlinga Mandir" class="place-card-img" loading="lazy">
+              <div class="place-card-overlay">
+                <div class="place-rating">★ 4.6 (61.9K Reviews)</div>
+                <h3 class="place-title">Baba Baidyanath Mandir</h3>
+                <p class="place-desc">One of the 12 sacred Jyotirlingas of Lord Shiva[span_0](start_span)[span_0](end_span), attracting millions of devotees every year[span_1](start_span)[span_1](end_span), especially during the Shravan Mela[span_2](start_span)[span_2](end_span).</p>
+                <span class="place-badge">Google Directions ↗</span>
+              </div>
+            </a>
+
+            <!-- ATTRACTION 2: NAULAKHA TEMPLE -->
+            <a href="https://www.google.com/maps/search/?api=1&query=Naulakha+Temple+Deoghar" target="_blank" rel="noopener" class="place-card">
+              <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=80" alt="Naulakha Temple" class="place-card-img" loading="lazy">
+              <div class="place-card-overlay">
+                <div class="place-rating">★ 4.5 (6.4K Reviews)</div>
+                <h3 class="place-title">Naulakha Temple</h3>
+                <p class="place-desc">A 146-foot tall temple dedicated to Radha and Krishna[span_3](start_span)[span_3](end_span), built with funds donated by Queen Charushila[span_4](start_span)[span_4](end_span) and styled after Belur Math[span_5](start_span)[span_5](end_span).</p>
+                <span class="place-badge">Google Directions ↗</span>
+              </div>
+            </a>
+
+            <!-- ATTRACTION 3: BASUKINATH TEMPLE -->
+            <a href="https://www.google.com/maps/search/?api=1&query=Basukinath+Temple+Jharkhand" target="_blank" rel="noopener" class="place-card">
+              <img src="https://images.unsplash.com/photo-1561361513-2d000a50f0dc?auto=format&fit=crop&w=1000&q=80" alt="Basukinath Temple" class="place-card-img" loading="lazy">
+              <div class="place-card-overlay">
+                <div class="place-rating">★ 4.6 (13.5K Reviews)</div>
+                <h3 class="place-title">Basukinath Temple</h3>
+                <p class="place-desc">A revered pilgrimage destination, traditionally visited by devotees completing their Baidyanath Dham yatra.</p>
+                <span class="place-badge">Google Directions ↗</span>
+              </div>
+            </a>
+
+            <!-- ATTRACTION 4: SATSANG ASHRAM -->
+            <a href="https://www.google.com/maps/search/?api=1&query=Satsang+Ashram+Deoghar" target="_blank" rel="noopener" class="place-card">
+              <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=1000&q=80" alt="Satsang Ashram" class="place-card-img" loading="lazy">
+              <div class="place-card-overlay">
+                <div class="place-rating">★ 4.6 (2.3K Reviews)</div>
+                <h3 class="place-title">Satsang Ashram</h3>
+                <p class="place-desc">A peaceful spiritual center founded by Thakur Anukulchandra in the southwestern part of the town[span_6](start_span)[span_6](end_span).</p>
+                <span class="place-badge">Google Directions ↗</span>
+              </div>
+            </a>
+
+            <!-- ATTRACTION 5: RIKHIA YOGASHRAM -->
+            <a href="https://www.google.com/maps/search/?api=1&query=Rikhiapeeth+Deoghar" target="_blank" rel="noopener" class="place-card">
+              <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1000&q=80" alt="Rikhia Yogashram" class="place-card-img" loading="lazy">
+              <div class="place-card-overlay">
+                <div class="place-rating">★ 4.6 (527 Reviews)</div>
+                <h3 class="place-title">Rikhia Yogashram</h3>
+                <p class="place-desc">A well-known yoga and meditation hub established by Swami Satyananda Saraswati for spiritual retreat and growth[span_7](start_span)[span_7](end_span).</p>
+                <span class="place-badge">Google Directions ↗</span>
+              </div>
+            </a>
+
+            <!-- ATTRACTION 6: TRIKUT PAHAR -->
+            <a href="https://www.google.com/maps/search/?api=1&query=Trikut+Pahar+Deoghar" target="_blank" rel="noopener" class="place-card">
+              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80" alt="Trikut Pahar" class="place-card-img" loading="lazy">
+              <div class="place-card-overlay">
+                <div class="place-rating">★ Scenic & Adventure</div>
+                <h3 class="place-title">Trikut Pahar (Trikut Hill)</h3>
+                <p class="place-desc">A picturesque hill featuring three main peaks (representing Brahma, Vishnu, and Shiva)[span_8](start_span)[span_8](end_span), offering trekking paths and ropeway facilities[span_9](start_span)[span_9](end_span).</p>
+                <span class="place-badge">Google Directions ↗</span>
+              </div>
+            </a>
+
+            <!-- ATTRACTION 7: TAPOVAN HILL -->
+            <a href="https://www.google.com/maps/search/?api=1&query=Tapovan+Hill+Deoghar" target="_blank" rel="noopener" class="place-card">
+              <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=80" alt="Tapovan Hill" class="place-card-img" loading="lazy">
+              <div class="place-card-overlay">
+                <div class="place-rating">★ Spiritual Caves</div>
+                <h3 class="place-title">Tapovan Hill</h3>
+                <p class="place-desc">A peaceful site known for ancient meditation caves associated with Sage Valmiki[span_10](start_span)[span_10](end_span), natural rock formations, and a local Shiva temple[span_11](start_span)[span_11](end_span).</p>
+                <span class="place-badge">Google Directions ↗</span>
+              </div>
+            </a>
+
+            <!-- ATTRACTION 8: NANDAN PAHAR -->
+            <a href="https://www.google.com/maps/search/?api=1&query=Nandan+Pahar+Deoghar" target="_blank" rel="noopener" class="place-card">
+              <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1000&q=80" alt="Nandan Pahar" class="place-card-img" loading="lazy">
+              <div class="place-card-overlay">
+                <div class="place-rating">★ Family Hilltop Park</div>
+                <h3 class="place-title">Nandan Pahar</h3>
+                <p class="place-desc">A family-friendly hilltop park that features a Nandi temple[span_12](start_span)[span_12](end_span), toy train[span_13](start_span)[span_13](end_span), and various amusement rides[span_14](start_span)[span_14](end_span).</p>
+                <span class="place-badge">Google Directions ↗</span>
+              </div>
+            </a>
+
+            <!-- ATTRACTION 9: SHIVGANGA -->
+            <a href="https://www.google.com/maps/search/?api=1&query=Shivganga+Deoghar" target="_blank" rel="noopener" class="place-card">
+              <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1000&q=80" alt="Shivganga Deoghar" class="place-card-img" loading="lazy">
+              <div class="place-card-overlay">
+                <div class="place-rating">★ Sacred Holy Pond</div>
+                <h3 class="place-title">Shivganga</h3>
+                <p class="place-desc">A sacred holy pond located close to the main Baba Baidyanath temple[span_15](start_span)[span_15](end_span) where pilgrims take holy baths before worship.</p>
+                <span class="place-badge">Google Directions ↗</span>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EXPANDED OPTIONS & SERVICES SECTION (NEWLY ADDED)
+         ========================================================================== -->
+    <section class="services-section" id="services">
+      <div class="section-header-center anim-el anim-from-bottom">
+        <span class="section-tag">Hospitality Services</span>
+        <h2 class="section-title">More Options For Guests</h2>
+        <p style="color: var(--text-muted);">Curated options and tailored facilities to ensure a hassle-free pilgrim stay.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card anim-el anim-from-left">
+          <div class="service-icon">🚉</div>
+          <h3 class="service-title">Station Pickup</h3>
+          <p class="service-desc">Located right opposite Baidyanathdham Railway Station with direct baggage assistance.</p>
+        </div>
+
+        <div class="service-card anim-el anim-from-bottom">
+          <div class="service-icon">🛕</div>
+          <h3 class="service-title">Temple VIP Pass Assistance</h3>
+          <p class="service-desc">Guiding pilgrims for smooth Darshan arrangements at Shree Baba Baidyanath Mandir.</p>
+        </div>
+
+        <div class="service-card anim-el anim-from-bottom">
+          <div class="service-icon">🍲</div>
+          <h3 class="service-title">Pure Veg Dining Options</h3>
+          <p class="service-desc">Hygienic sattvik meals and local delicacies prepared fresh upon request.</p>
+        </div>
+
+        <div class="service-card anim-el anim-from-right">
+          <div class="service-icon">🚗</div>
+          <h3 class="service-title">Sightseeing Cab Rentals</h3>
+          <p class="service-desc">Dedicated private taxis for trips to Trikut Pahar, Naulakha Temple, and Basukinath.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ROOMS & SUITES SECTION
+         ========================================================================== -->
+    <section class="rooms-section" id="rooms">
+      <div class="section-header-center anim-el anim-from-bottom">
+        <span class="section-tag">Comfortable Stays</span>
+        <h2 class="section-title">Our Rooms & Suites</h2>
+        <p style="color: var(--text-muted);">Sanitized, air-conditioned accommodations designed for families, tourists, and pilgrims.</p>
+      </div>
+
+      <div class="rooms-grid">
+        <!-- ROOM 1 -->
+        <div class="room-card anim-el anim-from-left">
+          <div class="room-img-wrap">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Deluxe Double Room" class="room-img" loading="lazy">
+          </div>
+          <div class="room-details">
+            <div class="room-price-tag">₹2,100 <span>/ night</span></div>
+            <h3 class="room-title-text">Deluxe Double</h3>
+            <ul class="room-amenities">
+              <li>King/Double Bed</li>
+              <li>Free High-Speed Wi-Fi</li>
+              <li>Air Conditioned</li>
+              <li>24/7 Room Service</li>
+            </ul>
+            <a href="https://wa.me/916207223933?text=Hi%2C%20I%20want%20to%20book%20Deluxe%20Double%20Room" target="_blank" class="btn-book-room">Book Now</a>
+          </div>
+        </div>
+
+        <!-- ROOM 2 -->
+        <div class="room-card anim-el anim-zoom-in">
+          <div class="room-img-wrap">
+            <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80" alt="Family Deluxe Room" class="room-img" loading="lazy">
+          </div>
+          <div class="room-details">
+            <div class="room-price-tag">₹3,150 <span>/ night</span></div>
+            <h3 class="room-title-text">Family Deluxe</h3>
+            <ul class="room-amenities">
+              <li>Multiple Bed Configuration</li>
+              <li>Ideal for Family Pilgrims</li>
+              <li>Station View</li>
+              <li>24 Hours Hot Water</li>
+            </ul>
+            <a href="https://wa.me/916207223933?text=Hi%2C%20I%20want%20to%20book%20Family%20Deluxe%20Room" target="_blank" class="btn-book-room">Book Now</a>
+          </div>
+        </div>
+
+        <!-- ROOM 3 -->
+        <div class="room-card anim-el anim-from-right">
+          <div class="room-img-wrap">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Suite Double Room" class="room-img" loading="lazy">
+          </div>
+          <div class="room-details">
+            <div class="room-price-tag">₹2,625 <span>/ night</span></div>
+            <h3 class="room-title-text">Suite Double</h3>
+            <ul class="room-amenities">
+              <li>Luxury Interior Finish</li>
+              <li>Seating Sofa Lounge</li>
+              <li>Priority Check-in</li>
+              <li>Complimentary Tea/Coffee</li>
+            </ul>
+            <a href="https://wa.me/916207223933?text=Hi%2C%20I%20want%20to%20book%20Suite%20Double%20Room" target="_blank" class="btn-book-room">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT CALLOUT SECTION
+         ========================================================================== -->
+    <section class="contact-cta-section" id="contact">
+      <div class="contact-card-box anim-el anim-zoom-in">
+        <div>
+          <span style="color: var(--accent-gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 700; margin-bottom: 10px; display: block;">Instant Direct Booking</span>
+          <h2 class="contact-cta-title">Plan Your Deoghar Stay With Us Today</h2>
+          <p class="contact-cta-desc">Get special room rates, family discounts, and instant room confirmation by calling our desk directly.</p>
+          <div class="contact-buttons-flex">
+            <a href="tel:6207223933" class="btn-phone-call">
+              📞 Call +91 6207223933
+            </a>
+            <a href="https://wa.me/916207223933?text=Hello%20Hotel%20New%20Grand%2C%20I%20want%20to%20inquire%20about%20room%20availability." target="_blank" class="btn-whatsapp">
+              💬 WhatsApp Us
+            </a>
+          </div>
+        </div>
+
+        <div style="border-left: 1px solid rgba(255,255,255,0.15); padding-left: 40px;" class="anim-el anim-from-right">
+          <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 16px;">Hotel Location</h3>
+          <p style="color: #94A3B8; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+            Opposite Baidyanathdham Railway Station Road,<br>
+            Deoghar, Jharkhand 814112
+          </p>
+          <p style="color: var(--accent-gold); font-size: 0.9rem; font-weight: 600;">Secondary Contact: +91 8340698857</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       BRAND FOOTER (WITH ACTION BUTTONS INSTEAD OF TEXT LINKS)
+       ========================================================================== -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3 class="footer-brand-title">Hotel New Grand</h3>
+        <p style="color: #64748B; line-height: 1.6; max-width: 300px; margin-bottom: 20px;">Your high-comfort hospitality hub near Baidyanath Dham Temple & Railway Station.</p>
+        <div style="display: flex; gap: 10px;">
+          <a href="tel:6207223933" class="footer-action-btn gold-btn" style="padding: 8px 14px; font-size: 0.8rem;">
+            <span>★ 4.5 Rated Hotel</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-head">Navigation</h4>
+        <div class="footer-btn-group">
+          <a href="#hero" class="footer-action-btn">
+            <span>Home Banner</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#places" class="footer-action-btn">
+            <span>Famous Places</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#services" class="footer-action-btn">
+            <span>Guest Services</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#rooms" class="footer-action-btn">
+            <span>Rooms & Suites</span>
+            <span class="btn-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-head">Explore Attractions</h4>
+        <div class="footer-btn-group">
+          <a href="https://www.google.com/maps/search/?api=1&query=Shree+Baba+Baidyanath+Jyotirlinga+Mandir+Deoghar" target="_blank" class="footer-action-btn">
+            <span>Baba Dham Temple</span>
+            <span class="btn-arrow">↗</span>
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Naulakha+Temple+Deoghar" target="_blank" class="footer-action-btn">
+            <span>Naulakha Temple</span>
+            <span class="btn-arrow">↗</span>
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Trikut+Pahar+Deoghar" target="_blank" class="footer-action-btn">
+            <span>Trikut Pahar</span>
+            <span class="btn-arrow">↗</span>
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Rikhiapeeth+Deoghar" target="_blank" class="footer-action-btn">
+            <span>Rikhia Yogashram</span>
+            <span class="btn-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-head">Contact Desk</h4>
+        <div class="footer-btn-group">
+          <a href="tel:6207223933" class="footer-action-btn gold-btn">
+            <span>Call Desk #1</span>
+            <span class="btn-arrow">📞</span>
+          </a>
+          <a href="tel:8340698857" class="footer-action-btn gold-btn">
+            <span>Call Desk #2</span>
+            <span class="btn-arrow">📞</span>
+          </a>
+          <a href="https://wa.me/916207223933?text=Hello%20Hotel%20New%20Grand" target="_blank" class="footer-action-btn" style="background: #166534; border-color: #15803D; color: #FFFFFF;">
+            <span>WhatsApp Booking</span>
+            <span class="btn-arrow">💬</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div>© 2026 Hotel New Grand, Deoghar. All rights reserved.</div>
+      <div style="display: flex; gap: 12px;">
+        <a href="#hero" class="footer-action-btn" style="padding: 6px 14px; font-size: 0.78rem;">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       JAVASCRIPT FOR SMART HEADER, AUTO-INFINITE CAROUSEL & MANUAL CONTROLS
+       ========================================================================== -->
+  <script>
+    /* --------------------------------------------------------------------------
+       1. SMART HIDE/SHOW HEADER ON SCROLL
+       -------------------------------------------------------------------------- */
+    let lastScrollY = window.scrollY;
+    const topNav = document.getElementById('top-nav');
+
+    window.addEventListener('scroll', () => {
+      const currentScrollY = window.scrollY;
+
+      // Hide if scrolling down past 80px, reveal immediately if scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 80) {
+        topNav.classList.add('nav-hidden');
+      } else {
+        topNav.classList.remove('nav-hidden');
+      }
+      lastScrollY = currentScrollY;
+    });
+
+    /* --------------------------------------------------------------------------
+       2. DYNAMIC INFINITE AUTO-SCROLL CAROUSEL WITH MANUAL LEFT/RIGHT CONTROLS
+       -------------------------------------------------------------------------- */
+    const track = document.getElementById('carousel-track');
+    const viewport = document.getElementById('carousel-viewport');
+    const btnLeft = document.getElementById('btn-scroll-left');
+    const btnRight = document.getElementById('btn-scroll-right');
+
+    // Duplicate track items dynamically to ensure a smooth continuous loop
+    const originalCards = Array.from(track.children);
+    originalCards.forEach(card => {
+      const clone = card.cloneNode(true);
+      track.appendChild(clone);
+    });
+
+    let currentTranslate = 0;
+    const scrollSpeed = 0.8; // Auto-scroll speed
+    let isPaused = false;
+    let animFrameId = null;
+
+    // Main Animation Loop
+    function renderCarousel() {
+      if (!isPaused) {
+        currentTranslate -= scrollSpeed;
+        const maxScroll = track.scrollWidth / 2;
+        
+        // Loop seamlessly back to start
+        if (Math.abs(currentTranslate) >= maxScroll) {
+          currentTranslate = 0;
+        }
+        track.style.transform = `translateX(${currentTranslate}px)`;
+      }
+      animFrameId = requestAnimationFrame(renderCarousel);
+    }
+
+    // Start auto loop
+    animFrameId = requestAnimationFrame(renderCarousel);
+
+    // Pause auto-scroll on hover
+    viewport.addEventListener('mouseenter', () => isPaused = true);
+    viewport.addEventListener('mouseleave', () => isPaused = false);
+
+    // Manual Scroll Buttons
+    const manualStep = 380; // Width of one card + gap
+
+    btnLeft.addEventListener('click', () => {
+      currentTranslate += manualStep;
+      if (currentTranslate > 0) {
+        currentTranslate = -(track.scrollWidth / 2);
+      }
+      track.style.transform = `translateX(${currentTranslate}px)`;
+    });
+
+    btnRight.addEventListener('click', () => {
+      currentTranslate -= manualStep;
+      const maxScroll = track.scrollWidth / 2;
+      if (Math.abs(currentTranslate) >= maxScroll) {
+        currentTranslate = 0;
+      }
+      track.style.transform = `translateX(${currentTranslate}px)`;
+    });
+
+    /* --------------------------------------------------------------------------
+       3. INTERSECTION OBSERVER ANIMATIONS ENGINE
+       -------------------------------------------------------------------------- */
+    document.addEventListener('DOMContentLoaded', () => {
+      const animatedElements = document.querySelectorAll('.anim-el');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('anim-active');
+          }
+        });
+      }, { threshold: 0.12 });
+
+      animatedElements.forEach(el => observer.observe(el));
+
+      // Auto-set checkin date
+      const today = new Date().toISOString().split('T')[0];
+      const checkinField = document.getElementById('checkin');
+      if (checkinField) checkinField.value = today;
+    });
+
+    /* --------------------------------------------------------------------------
+       4. NAVIGATION DRAWER TOGGLE
+       -------------------------------------------------------------------------- */
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const navDrawer = document.getElementById('nav-drawer');
+    const drawerOverlay = document.getElementById('drawer-overlay');
+
+    function toggleMenu(show) {
+      const isOpen = show !== undefined ? show : !navDrawer.classList.contains('open');
+      navDrawer.classList.toggle('open', isOpen);
+      drawerOverlay.classList.toggle('open', isOpen);
+    }
+
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', () => toggleMenu());
+    if (drawerOverlay) drawerOverlay.addEventListener('click', () => toggleMenu(false));
+
+    function submitBooking() {
+      const checkin = document.getElementById('checkin').value;
+      const checkout = document.getElementById('checkout').value;
+      const message = `Hello Hotel New Grand, I would like to check availability from ${checkin} to ${checkout}.`;
+      window.open(`https://wa.me/916207223933?text=${encodeURIComponent(message)}`, '_blank');
+    }
+  </script>
+</body>
+  </html>
